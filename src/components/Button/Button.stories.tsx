@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
+import accountIcon from "../../assets/figma/account.svg";
+import accountHoverIcon from "../../assets/figma/account-hover.svg";
+import accountDisabledIcon from "../../assets/figma/account-disabled.svg";
+import accountDangerIcon from "../../assets/figma/account-danger.svg";
+import accountDangerHoverIcon from "../../assets/figma/account-danger-hover.svg";
+import accountDangerDisabledIcon from "../../assets/figma/account-danger-disabled.svg";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
@@ -8,12 +14,16 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["primary", "secondary", "skeleton"],
+      options: ["primary", "secondary", "tertiary", "danger-primary", "skeleton", "skeleton-primary"],
     },
 
     size: {
       control: "select",
       options: ["large", "medium", "small"],
+    },
+    state: {
+      control: "select",
+      options: ["default", "hover"],
     },
   },
 };
@@ -122,5 +132,89 @@ export const SkeletonSmall: Story = {
   args: {
     variant: "skeleton",
     size: "small",
+  },
+};
+
+/* =========================
+   Danger
+========================= */
+
+export const DangerPrimary: Story = {
+  args: {
+    variant: "danger-primary",
+    size: "large",
+    children: "ボタン",
+    iconLeft: <img src={accountDangerIcon} alt="" />,
+  },
+  parameters: {
+    layout: "centered",
+  },
+};
+
+export const DangerPrimaryHover: Story = {
+  args: {
+    variant: "danger-primary",
+    size: "large",
+    state: "hover",
+    children: "ボタン",
+    iconLeft: <img src={accountDangerHoverIcon} alt="" />,
+  },
+  parameters: {
+    layout: "centered",
+  },
+};
+
+export const DangerPrimaryDisabled: Story = {
+  args: {
+    variant: "danger-primary",
+    size: "large",
+    disabled: true,
+    children: "ボタン",
+    iconLeft: <img src={accountDangerDisabledIcon} alt="" />,
+  },
+  parameters: {
+    layout: "centered",
+  },
+};
+
+/* =========================
+   Tertiary
+========================= */
+
+export const TertiaryWithLeadingIcon: Story = {
+  args: {
+    variant: "tertiary",
+    size: "large",
+    children: "ボタン",
+    iconLeft: <img src={accountIcon} alt="" />,
+  },
+  parameters: {
+    layout: "centered",
+  },
+};
+
+export const TertiaryHover: Story = {
+  args: {
+    variant: "tertiary",
+    size: "large",
+    state: "hover",
+    children: "ボタン",
+    iconLeft: <img src={accountHoverIcon} alt="" />,
+  },
+  parameters: {
+    layout: "centered",
+  },
+};
+
+export const TertiaryDisabled: Story = {
+  args: {
+    variant: "tertiary",
+    size: "large",
+    disabled: true,
+    children: "ボタン",
+    iconLeft: <img src={accountDisabledIcon} alt="" />,
+  },
+  parameters: {
+    layout: "centered",
   },
 };

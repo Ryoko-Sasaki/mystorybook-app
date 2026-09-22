@@ -1,0 +1,65 @@
+.badge {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.badge--number,
+.badge--dot {
+  overflow: hidden;
+  border-radius: 9999px;
+}
+
+.badge--number.badge--L {
+  padding: 0 4px;
+  color: #fff;
+}
+
+.badge--number.badge--alert,
+.badge--dot.badge--error {
+  background: red;
+}
+
+.badge--number.badge--success,
+.badge--dot.badge--success {
+  background: #1cbf73;
+}
+
+.badge--dot.badge--S {
+  width: 8px;
+  height: 8px;
+}
+
+.badge--AI.badge--neutral {
+  flex-direction: column;
+  gap: 0;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: linear-gradient(211.565deg, #0dd377 37.821%, #005cdc 100%);
+  color: #fff;
+}
+
+.badge--Highlight.badge--neutral,
+.badge--Label.badge--neutral,
+.badge--Ranking.badge--neutral {
+  gap: 2px;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  background: #e0faee;
+  color: #1cbf73;
+}
+
+.badge__icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
